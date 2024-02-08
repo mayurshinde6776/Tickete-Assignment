@@ -16,33 +16,32 @@ const styles = {
 
 function Footer(props) {
   return (
-    <Navbar fixed="bottom" bg="dark" variant="dark" style={{ height: '100px' }}>
+    <Navbar fixed="bottom" bg="dark" variant="dark" style={{ minHeight: '100px', background: '#000000' }}>
       <Container>
         {/* Tickete Heading and Navigation Links */}
-        <div className="d-flex flex-column">
-          <Navbar.Brand href="#" className="text-light font-weight-bold  m-2 ml-0">
+        <div className="d-flex flex-column justify-content-center align-items-left">
+          <Navbar.Brand href="#" className="text-light font-weight-bold m-2 ml-0">
             tickete
           </Navbar.Brand>
 
-          <div className="d-flex flex-row">
-            <Nav.Link href="#" className="text-light ml-0 p-2 mb-1">
-              Made with
-              <FaHeart style={{...styles.loveIcon,marginLeft: '10px'}} />
+          <div className="d-flex flex-row flex-wrap justify-content-left">
+            <Nav.Link href="#" className="text-light p-2 mb-1">
+              Made with <FaHeart style={{ ...styles.loveIcon, marginLeft: '5px' }} />
             </Nav.Link>
-            <Nav.Link href="#" className="text-light ml-0 p-2 mb-1">
-              <FaCircle style={{ ...styles.dotIcon, marginRight: '10px' }} />
+            <Nav.Link href="#" className="text-light p-2 mb-1">
+              <FaCircle style={{ ...styles.dotIcon, marginLeft: '5px', marginRight: '5px' }} />
               Privacy Policy
             </Nav.Link>
-            <Nav.Link href="#" className="text-light ml-0 p-2 mb-1">
-              <FaCircle style={{ ...styles.dotIcon, marginRight: '10px' }} />
+            <Nav.Link href="#" className="text-light p-2 mb-1">
+              <FaCircle style={{ ...styles.dotIcon, marginLeft: '5px', marginRight: '5px' }} />
               Terms of Usage
             </Nav.Link>
-            <Nav.Link href="#" className="text-light ml-0 p-2 mb-1">
-              <FaCircle style={{ ...styles.dotIcon, marginRight: '10px' }} />
+            <Nav.Link href="#" className="text-light p-2 mb-1">
+              <FaCircle style={{ ...styles.dotIcon, marginLeft: '5px', marginRight: '5px' }} />
               Cancellation Policy
             </Nav.Link>
-            <Nav.Link href="#" className="text-light ml-0 p-2 mb-1">
-              <FaCircle style={{ ...styles.dotIcon, marginRight: '10px' }} />
+            <Nav.Link href="#" className="text-light p-2 mb-1">
+              <FaCircle style={{ ...styles.dotIcon, marginLeft: '5px', marginRight: '5px' }} />
               Sitemap
             </Nav.Link>
           </div>
