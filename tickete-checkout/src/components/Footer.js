@@ -26,7 +26,7 @@ function Footer(props) {
 
           <div className="d-flex flex-row flex-wrap justify-content-left">
             <Nav.Link href="#" className="text-light p-2 mb-1">
-              Made with <FaHeart style={{ ...styles.loveIcon, marginLeft: '5px' }} />
+              Made with <FaHeart style={{ ...styles.loveIcon, marginLeft: '5px', }} />
             </Nav.Link>
             <Nav.Link href="#" className="text-light p-2 mb-1">
               <FaCircle style={{ ...styles.dotIcon, marginLeft: '5px', marginRight: '5px' }} />

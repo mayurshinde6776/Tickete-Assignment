@@ -5,10 +5,18 @@ import { Nav } from 'react-bootstrap';
 import { FaShoppingBag, FaQuestionCircle } from 'react-icons/fa';
 
 function Header(props) {
+  const headerStyle = {
+    width: '100%', // Full width for mobile view
+    height: '46px', // Hug height
+    display: 'flex',
+    justifyContent: 'space-between', // Space between items
+    alignItems: 'center', // Center vertically
+  };
+
   return (
-    <Navbar expand="lg" className="bg-light">
-      <Container fluid>
-        <Navbar.Brand href="#" className="text-dark font-weight-bold" style={{ fontSize: '2rem' }}>
+    <Navbar expand="lg" className="bg-light" style={headerStyle}>
+      <Container>
+        <Navbar.Brand href="#" className="text-dark font-weight-bold" style={{ fontSize: '2rem', width: '126.55px' }}>
           tickete
         </Navbar.Brand>
 
