@@ -146,5 +146,28 @@
     color: #EDEEF0;
   }
   
+  /* CreditDebit.css */
+.brand-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .brand-icon {
+    font-size: 36px;
+  }
+  
+  .visa {
+    background: #00579F;
+  }
+  
+  .mastercard {
+    background: linear-gradient(90deg, #ff5e00 50%, #ed0006 50%);
+  }
+  
+  .diners-club {
+    color: #0079BE;
+  }
+  
  
   

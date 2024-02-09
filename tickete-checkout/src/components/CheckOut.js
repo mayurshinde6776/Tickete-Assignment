@@ -5,6 +5,11 @@ import FrequentQuestions from './FrequentQuestions';
 import '../css/CheckOut.css'; // Import the CSS file
 import Cards from './Cards';
 import TotalPayable from './TotalPayable';
+import CreditDebit from './CreditDebit';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faApplePay, faGooglePay } from '@fortawesome/free-brands-svg-icons';
+import { faCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function CheckOut(props) {
   return (
@@ -12,7 +17,7 @@ function CheckOut(props) {
       <div className="heading-container">
         <p>Holding Your Tickets for 30:00</p>
       </div>
-      
+
       <div className="container my-5">
         <div className="row">
           <div className="col-md-12 col-lg-8">
@@ -21,15 +26,24 @@ function CheckOut(props) {
                 <div className="confirm-pay-text">Confirm & Pay</div>
               </div>
 
-              <div className="info-section ">
-                <div className="info-section-text">
-                  <div>
-                    Free cancellation -
-                    <i className="fas fa-check info-section-icon"></i>
-                  </div>
-                  <div style={{ color: '#60646C' }}>Tickets can be cancelled by 13th December, 2022.</div>
-                </div>
-              </div>
+
+              <Container className='my-3 info-section '>
+                <Row className=''>
+                  <Col xs={12} md={2} className='order-md-2'>
+                    <FontAwesomeIcon icon={faInfoCircle} className='info-section-icon' />
+                  </Col>
+                  <Col xs={12} md={10} className='order-md-1 ' >
+                    <div className='free-cancel'>
+                      Free cancellation -
+                    </div>
+                    <div className='free-cancel-subtext'>
+                      Tickets can be cancelled by 13th December, 2022.
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+
+
 
               <div className="details-frame">
                 <div className='details-heading-div'>
@@ -107,15 +121,77 @@ function CheckOut(props) {
 
                 <hr style={{ color: '#DDDDE3', border: '1px solid #DDDDE3' }} />
               </div>
+
+              <div className='details-heading-div'>
+                <div className='details-heading'>
+                  Select your mode of payment
+                  <p className='details-para'>Payments with Tickete are secure and encrypted.</p>
+                </div>
+              </div>
             </div>
+
+            <CreditDebit />
+
+            <Container className='mt-3'>
+              <Row>
+                <Col xs={12} md={6} lg={12}>
+                  <div className='coming-container styled-div'>
+                    <p className='coming-text'>
+                      <FontAwesomeIcon icon={faApplePay} className='apple-icon' />
+                      <span> Coming Soon</span>
+                    </p>
+                    <div className='align-item-end'>
+                      <FontAwesomeIcon icon={faCircle} className='coming-radio-icon' />
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+
+            <Container className='mt-3'>
+              <Row>
+                <Col xs={12} md={6} lg={12}>
+                  <div className='coming-container styled-div'>
+                    <p className='coming-text'>
+                      <FontAwesomeIcon icon={faGooglePay} className='apple-icon' />
+                      <span> Coming Soon</span>
+                    </p>
+                    <div className='align-item-end'>
+                      <FontAwesomeIcon icon={faCircle} className='coming-radio-icon' />
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+            <hr />
+            <div className='details-heading-div'>
+                <div className='details-heading'>
+                Total Payable: $XXX
+                  <p className='details-para'>Payments with Tickete are secure and encrypted.</p>
+                </div>
+              </div>
+
+              <Container className='info-container'>
+      <Row>
+        <Col xs={12} md={2} className='info-icon'>
+          <FontAwesomeIcon icon={faInfoCircle} />
+        </Col>
+        <Col xs={12} md={10} className='info-content'>
+          <h3 className='info-heading'>You will be charged in AED</h3>
+          <p className='info-subheading'>The price shown here is in US Dollar (USD) as per the current conversion rate. You will be charged in United Arab Emirates Dirham (AED).</p>
+        </Col>
+      </Row>
+    </Container>
           </div>
 
           <div className="col-md-12 col-lg-4">
             <div className="right-column">
               <Cards />
-              <TotalPayable/>
+              <TotalPayable />
             </div>
           </div>
+
+
         </div>
       </div>
 
