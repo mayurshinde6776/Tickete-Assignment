@@ -106,7 +106,6 @@ function CheckOut(props) {
                     <div className="col">
                       <select className="form-select" required>
                         <option value="" disabled selected>Select*</option>
-                        {/* Add your select options here */}
                       </select>
                       <span className="bi bi-chevron-down dropdown-icon"></span>
                     </div>
@@ -135,8 +134,9 @@ function CheckOut(props) {
               </div>
             </div>
 
+{/* for card details section created separate component and impoted here */}
             <CreditDebit />
-
+{/* comming soon two fields */}
             <Container className='mt-3'>
               <Row>
                 <Col xs={12} md={6} lg={12}>
@@ -170,6 +170,7 @@ function CheckOut(props) {
             </Container>
             <hr className="horizontal-line mt-3" />
 
+{/* Total payabale section started here */}
             <Container>
               <div className='details-heading-div mb-2'>
                 <div className='details-heading'>
@@ -191,8 +192,10 @@ function CheckOut(props) {
             </Container>
 
           </div>
+          {/* right column */}
           <div className="col-md-12 col-lg-4">
             <div className='right-column' >
+              {/* Crads and totalpayabale components created separately and added here */}
               <Cards />
               <TotalPayable />
             </div>
@@ -203,6 +206,7 @@ function CheckOut(props) {
       </div>
 
       <div >
+        {/* FAQ section created in separate component and added here */}
         <FrequentQuestions />
         <hr className="horizontal-line mb-5" />
       </div>

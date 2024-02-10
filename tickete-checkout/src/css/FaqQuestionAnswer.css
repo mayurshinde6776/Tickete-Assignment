@@ -1,4 +1,4 @@
-/* FaqQuestionAnswer.css */
+
 .faq-question-answer {
     padding: 24px 28px;
     border-radius: 16px;
@@ -17,7 +17,7 @@
     height: 18.75px;
     top: 2.63px;
     left: 2.63px;
-    margin-right: 12px; /* Adjust the margin as needed */
+    margin-right: 12px; 
     color: #60646C;
   }
   
@@ -45,7 +45,7 @@
     text-align: left;
   }
   
-  /* FaqQuestionAnswer.css */
+
   .toggle-icon::before {
     content: '+';
   }
