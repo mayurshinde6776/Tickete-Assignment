@@ -2,42 +2,85 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from 'react-bootstrap';
-import { FaShoppingBag, FaQuestionCircle } from 'react-icons/fa';
+import { FaShoppingBag, FaQuestionCircle, FaChevronLeft } from 'react-icons/fa';
+
+const styles = {
+  label: {
+    fontFamily: 'Open Sans',
+    fontSize: '16px',
+    fontWeight: '600',
+    lineHeight: '22px',
+    letterSpacing: '0em',
+    textAlign: 'left',
+    color: '#60646C',
+  },
+};
 
 function Header(props) {
   const headerStyle = {
-    width: '100%', // Full width for mobile view
-    height: '46px', // Hug height
+    width: '100%', 
+    height: 'auto', 
     display: 'flex',
-    justifyContent: 'space-between', // Space between items
-    alignItems: 'center', // Center vertically
+    flexDirection: 'column', 
+    justifyContent: 'center',
+    background: '#F9F9FB40',
+    padding: '10px', 
+  };
+
+  const deviceInfoStyle = {
+    display: 'flex',
+    alignItems: 'center',
   };
 
   return (
     <Navbar expand="lg" className="bg-light" style={headerStyle}>
       <Container>
-        <Navbar.Brand href="#" className="text-dark font-weight-bold" style={{ fontSize: '2rem', width: '126.55px' }}>
-          tickete
+        {/* Top Section (visible only on small mobile devices) */}
+        <div className="d-lg-none">
+          {/* Right Side */}
+          <div style={deviceInfoStyle}>
+            <FaChevronLeft size={20} className="mx-2" />
+          </div>
+        </div>
+
+        {/* Middle Section (visible on all screens) */}
+        <Navbar.Brand href="#" className="text-dark font-weight-bold text-center" style={{ fontSize: '2rem', marginTop: '10px' }}>
+          {window.innerWidth < 992 ? '' : 'tickete'}
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+        {/* Bottom Section (visible on all screens) */}
+        <Navbar.Collapse className="justify-content-center">
           <Nav className="text-center">
-            <Nav.Link href="#" className="text-dark">
-              <FaShoppingBag size={15} className='mx-2' />
-              Checkout
-            </Nav.Link>
+            {window.innerWidth < 576 ? ( // Display only on small mobile devices
+              <Nav.Link href="#" style={styles.label}>
+                <FaShoppingBag size={15} className='mx-2' />
+                Checkout
+              </Nav.Link>
+            ) : (
+              // Display only on larger screens
+              <Nav.Link href="#" style={styles.label}>
+                <FaShoppingBag size={15} className='mx-2' />
+                Checkout
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
 
         {/* Help Icon on the Right */}
         <Navbar.Collapse className="justify-content-end">
           <Nav>
-            <Nav.Link href="#" className="text-dark">
-              Help
-              <FaQuestionCircle className="mx-2" />
-            </Nav.Link>
+            {window.innerWidth < 576 ? ( // Display only on small mobile devices
+              <Nav.Link href="#" style={styles.label}>
+                <FaQuestionCircle className="mx-2" />
+                Help
+              </Nav.Link>
+            ) : (
+              // Display only on larger screens
+              <Nav.Link href="#" style={styles.label}>
+                <FaQuestionCircle className="mx-2" />
+                Help
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

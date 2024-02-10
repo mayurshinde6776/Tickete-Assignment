@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons'; // Add the Lock icon
-import { Button } from 'react-bootstrap'; // Import Bootstrap's Button component
+import { Button } from 'react-bootstrap'; 
 import '../css/Totalpayable.css';
 
 function TotalPayable() {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import FrequentQuestions from './FrequentQuestions';
-import '../css/CheckOut.css'; // Import the CSS file
+import '../css/CheckOut.css';
 import Cards from './Cards';
 import TotalPayable from './TotalPayable';
 import CreditDebit from './CreditDebit';
@@ -15,34 +15,32 @@ function CheckOut(props) {
   return (
     <div>
       <div className="heading-container">
-        <p>Holding Your Tickets for 30:00</p>
+        <p className='heading-container-p'>Holding Your Tickets for 30:00</p>
       </div>
-
       <div className="container my-5">
         <div className="row">
-          <div className="col-md-12 col-lg-8">
+          <div className="col-md-12 col-lg-8  ">
             <div className="frame">
               <div className="heading-section">
                 <div className="confirm-pay-text">Confirm & Pay</div>
               </div>
-
-
-              <Container className='my-3 info-section '>
-                <Row className=''>
-                  <Col xs={12} md={2} className='order-md-2'>
-                    <FontAwesomeIcon icon={faInfoCircle} className='info-section-icon' />
+              <Container className='my-3 info-section'>
+                <Row>
+                  <Col xs={12} md={10} className='order-md-1 d-flex align-items-center'>
+                    <div className='p-2'>
+                      <div className='free-cancel'>
+                        Free cancellation -
+                      </div>
+                      <div className='free-cancel-subtext'>
+                        Tickets can be cancelled by 13th December, 2022.
+                      </div>
+                    </div>
                   </Col>
-                  <Col xs={12} md={10} className='order-md-1 ' >
-                    <div className='free-cancel'>
-                      Free cancellation -
-                    </div>
-                    <div className='free-cancel-subtext'>
-                      Tickets can be cancelled by 13th December, 2022.
-                    </div>
+                  <Col xs={12} md={2} className='order-md-2 d-flex align-items-center justify-content-end'>
+                    <FontAwesomeIcon icon={faInfoCircle} className='info-section-icon' />
                   </Col>
                 </Row>
               </Container>
-
 
 
               <div className="details-frame">
@@ -55,29 +53,35 @@ function CheckOut(props) {
 
                 <div className="details-form">
                   <div className="mb-3 position-relative">
-                    <input type="text" className="form-control" placeholder="Full Name" required />
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Full Name *"
+                      required
+                    />
                   </div>
 
                   <div className="row mb-3">
                     <div className="col">
-                      <input type="text" className="form-control" placeholder="Country Code" required />
+                      <input type="text" className="form-control" placeholder="Country Code *" required />
                     </div>
                     <div className="col">
-                      <input type="text" className="form-control" placeholder="Phone Number" required />
+                      <input type="text" className="form-control" placeholder="Phone Number *" required />
                     </div>
                   </div>
 
                   <div className="row mb-3">
                     <div className="col">
-                      <input type="email" className="form-control" placeholder="Email" required />
+                      <input type="email" className="form-control" placeholder="Email *" required />
                     </div>
                     <div className="col">
-                      <input type="email" className="form-control" placeholder="Confirm Email" required />
+                      <input type="email" className="form-control" placeholder="Confirm Email *" required />
                     </div>
                   </div>
                 </div>
-
               </div>
+
+
 
               <div className="details-frame">
                 <div className='details-heading-div'>
@@ -94,14 +98,14 @@ function CheckOut(props) {
                         type="text"
                         className="form-control"
                         id="labelInput"
-                        placeholder="label Input"
+                        placeholder="label Input*"
                         required
                       />
                     </div>
 
                     <div className="col">
                       <select className="form-select" required>
-                        <option value="" disabled selected>Select</option>
+                        <option value="" disabled selected>Select*</option>
                         {/* Add your select options here */}
                       </select>
                       <span className="bi bi-chevron-down dropdown-icon"></span>
@@ -111,11 +115,12 @@ function CheckOut(props) {
 
                   <div className="mb-3 position-relative">
                     <select className="form-select" required>
-                      <option value="" disabled selected>Multiselect</option>
-                      {/* Add your select options here */}
+                      <option value="" disabled selected>Multiselect*</option>
+                      <option value="option1">Option 1</option>
                     </select>
                     <span className="bi bi-chevron-down dropdown-icon"></span>
                   </div>
+
 
                 </div>
 
@@ -163,29 +168,31 @@ function CheckOut(props) {
                 </Col>
               </Row>
             </Container>
-            <hr />
-            <div className='details-heading-div'>
+            <hr className="horizontal-line mt-3" />
+
+            <Container>
+              <div className='details-heading-div mb-2'>
                 <div className='details-heading'>
-                Total Payable: $XXX
-                  <p className='details-para'>Payments with Tickete are secure and encrypted.</p>
+                  Total Payable: $XXX
                 </div>
               </div>
-
               <Container className='info-container'>
-      <Row>
-        <Col xs={12} md={2} className='info-icon'>
-          <FontAwesomeIcon icon={faInfoCircle} />
-        </Col>
-        <Col xs={12} md={10} className='info-content'>
-          <h3 className='info-heading'>You will be charged in AED</h3>
-          <p className='info-subheading'>The price shown here is in US Dollar (USD) as per the current conversion rate. You will be charged in United Arab Emirates Dirham (AED).</p>
-        </Col>
-      </Row>
-    </Container>
-          </div>
+                <Row>
+                  <Col xs={12} md={2} className='info-icon'>
+                    <FontAwesomeIcon icon={faInfoCircle} className='info-section-icon' />
+                  </Col>
+                  <Col xs={12} md={10} className='info-content'>
+                    <h3 className='info-heading'>You will be charged in AED</h3>
+                    <p className='info-subheading'>The price shown here is in US Dollar (USD) as per the current conversion rate. You will be charged in United Arab Emirates Dirham (AED).</p>
+                  </Col>
+                </Row>
+              </Container>
+              <hr className="horizontal-line mt-3" />
+            </Container>
 
+          </div>
           <div className="col-md-12 col-lg-4">
-            <div className="right-column">
+            <div className='right-column' >
               <Cards />
               <TotalPayable />
             </div>
@@ -195,7 +202,10 @@ function CheckOut(props) {
         </div>
       </div>
 
-      <FrequentQuestions />
+      <div >
+        <FrequentQuestions />
+        <hr className="horizontal-line mb-5" />
+      </div>
     </div>
   );
 }

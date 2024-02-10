@@ -29,19 +29,19 @@ function CreditDebit() {
       <div className="details-form">      
                   <div className="row mb-3">
                     <div className="col">
-                      <input type="text" className="form-control" placeholder="Name on Card" required />
+                      <input type="text" className="form-control" placeholder="Name on Card*" required />
                     </div>
                     <div className="col">
-                      <input type="text" className="form-control" placeholder="Card Number" required />
+                      <input type="text" className="form-control" placeholder="Card Number*" required />
                     </div>
                   </div>
 
                   <div className="row mb-3">
                     <div className="col">
-                      <input type="email" className="form-control" placeholder="Expiery Date" required />
+                      <input type="email" className="form-control" placeholder="Expiery Date*" required />
                     </div>
                     <div className="col">
-                      <input type="email" className="form-control" placeholder="<CVV>/<CVC>" required />
+                      <input type="email" className="form-control" placeholder="<CVV>/<CVC>*" required />
                     </div>
                   </div>
                 </div>
